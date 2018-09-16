@@ -24,12 +24,24 @@ namespace TreehouseDefense.Tests
         }
 
         [TestMethod()]
-        public void DistanceToTest()
+        public void DistanceToWithPathagoreanTriple()
         {
            var point = new Point(3,4);
             var target = new Point(0,0);
 
             var expected = 5.0;
+            var actual = target.DistanceTo(point);
+            Assert.AreEqual(expected,actual,0.1);
+
+        }
+
+        [TestMethod()]
+        public void DistanceToPointAtSamePosition()
+        {
+           var point = new Point(0,0);
+            var target = new Point(0,0);
+
+            var expected = 0.0;
             var actual = target.DistanceTo(point);
             Assert.AreEqual(expected,actual,0.1);
 
