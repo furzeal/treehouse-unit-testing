@@ -20,7 +20,7 @@ namespace TreehouseDefense
 
         public override bool Equals(object obj)
         {
-            var that = obj as Point;
+            Point that = obj as Point;
             return that != null && this.X == that.X && this.Y == that.Y;
         }
 

@@ -4,7 +4,7 @@ namespace TreehouseDefense
 {
     public class Path
     {
-        private MapLocation[] pathLocations;
+        private readonly MapLocation[] pathLocations;
 
         public Path(MapLocation[] pathLocations)
         {
@@ -13,7 +13,7 @@ namespace TreehouseDefense
 
         public bool IsOnPath(MapLocation mapLocation)
         {
-            throw new NotImplementedException();
+            return Array.IndexOf(pathLocations, mapLocation)>=0;
         }
     }
 }

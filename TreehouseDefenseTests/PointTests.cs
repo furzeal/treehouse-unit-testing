@@ -46,5 +46,48 @@ namespace TreehouseDefense.Tests
             Assert.AreEqual(expected,actual,0.1);
 
         }
+
+        [TestMethod]
+        public void DoesNotEqualNull()
+        {
+            var target = new Point(0, 0);
+            Assert.IsFalse(target.Equals(null));
+        }
+
+        [TestMethod]
+        public void DistinctObjectsAreEqual()
+        {
+            var target = new Point(4, 5);
+            Assert.IsTrue(target.Equals(new Point(4, 5)));
+        }
+
+        [TestMethod]
+        public void PointsAreNotEqual()
+        {
+            var target = new Point(4, 5);
+            Assert.IsFalse(target.Equals(new Point(4, 6)));
+        }
+
+        [TestMethod]
+        public void SimilarPointsHaveDifferentHashCodes1()
+        {
+            var target = new Point(4, 5);
+            Assert.AreNotEqual(new Point(5, 4).GetHashCode(), target.GetHashCode());
+        }
+
+        [TestMethod]
+        public void SimilarPointsHaveDifferentHashCodes2()
+        {
+            var target = new Point(4, 5);
+            Assert.AreNotEqual(new Point(4, 6).GetHashCode(), target.GetHashCode());
+        }
+
+        [TestMethod]
+        public void EqualPointsHaveSameHashCodes()
+        {
+            var target = new Point(4, 5);
+            Assert.AreEqual(new Point(4, 5).GetHashCode(), target.GetHashCode());
+        }
+
     }
 }
