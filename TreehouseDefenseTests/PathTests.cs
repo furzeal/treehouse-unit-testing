@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TreehouseDefense;
 
-namespace TreehouseDefense.Tests
+namespace TreehouseDefenseTests
 {
     [TestClass()]
     public class PathTests
